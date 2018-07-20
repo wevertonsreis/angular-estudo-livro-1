@@ -32,7 +32,8 @@
 
 </app-ng-content>
 <app-event-binding></app-event-binding>
+<app-input-output [menu]="desenvolvimento" (nomeClicado)="valorPassado($event)"></app-input-output>
+<p>Voce clicou em {{valor}}</p>
  -->
 
- <app-input-output [menu]="desenvolvimento" (nomeClicado)="valorPassado($event)"></app-input-output>
- <p>Voce clicou em {{valor}}</p>
+ <app-formulario></app-formulario>
