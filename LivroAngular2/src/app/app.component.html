@@ -16,19 +16,23 @@
 <app-ng-for></app-ng-for>
 <app-ng-class></app-ng-class>
 <app-ng-style></app-ng-style>
+<app-ng-content>
+	
+	<div class="titulo">
+		meu titulo passado	
+	</div>
+	
+	<div class="corpo">
+		meu conteudo com select 	
+	</div>
+	
+	<div class="corpo">
+		segundo conteudo com select 	
+	</div>
+
+</app-ng-content>
+<app-event-binding></app-event-binding>
  -->
- <app-ng-content>
- 	
- 	<div class="titulo">
- 		meu titulo passado	
- 	</div>
- 	
- 	<div class="corpo">
- 		meu conteudo com select 	
- 	</div>
- 	
- 	<div class="corpo">
- 		segundo conteudo com select 	
- 	</div>
- 
- </app-ng-content>
+
+ <app-input-output [menu]="desenvolvimento" (nomeClicado)="valorPassado($event)"></app-input-output>
+ <p>Voce clicou em {{valor}}</p>

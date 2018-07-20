@@ -10,12 +10,18 @@ import { AlertService } from './alert.service';
 export class AppComponent {
   title = 'Livro Angular 2';
   foto  = 'favicon.ico';
+  desenvolvimento: string[] = ['Angular 2', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Java =)'];
+  valor: string;
 
   constructor(private alertService: AlertService) {
   }
 
   enviarAlerta(): void {
     this.alertService.msgAlerta();
+  }
+
+  valorPassado(valorPassado: string): void {
+    this.valor = valorPassado;
   }
 
 }
