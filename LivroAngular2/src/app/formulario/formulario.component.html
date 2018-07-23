@@ -1,19 +1,35 @@
 <h2>Formulario</h2>
 
-<form #cadastro="ngForm">
+<form #cadastro="ngForm" (ngSubmit)="enviarDados()">
   <div>
     <label for="nome">Nome</label>
-    <input type="text" id="nome" [(ngModel)]="contato.nome" name="nome">
+    <input type="text" id="nome" [(ngModel)]="contato.nome" #nome="ngModel" name="nome" required>
+    <div [hidden]="nome.valid || nome.pristine"> 
+      <p>O valor nome e obrigatorio!</p>
+    </div>
+  </div>
+  <div ngModelGroup="todosOsContatos" #todosOsContatos="ngModelGroup">
+    <div>
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" [(ngModel)]="contato.telefone" #telefone="ngModel" name="telefone" required>
+      <div *ngIf="telefone.invalid && telefone.dirty">
+        <p>O valor telefone e obrigatorio!</p>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" [(ngModel)]="contato.email" #email="ngModel" name="email">
+      <div  [hidden]="email.pristine">
+        <p>O conteudo foi mudado!</p>
+      </div>
+      <div *ngIf="email.touched">
+        <p>Clicou fora do campo!</p>
+      </div>
+    </div>
   </div>
   <div>
-    <label for="telefone">Telefone</label>
-    <input type="text" id="telefone" [(ngModel)]="contato.telefone" name="telefone">
-  </div>
-  <div>
-    <label for="email">Email</label>
-    <input type="text" id="email" [(ngModel)]="contato.email" name="email">
-  </div>
-  <div>
-    <button type="submit">Enviar</button>
+    <button type="submit" [disabled]="cadastro.form.invalid">Enviar</button>
   </div>    
+  <p>{{todosOsContatos}}</p>
+  <p>{{todosOsContatos.value | json}}</p>
 </form>

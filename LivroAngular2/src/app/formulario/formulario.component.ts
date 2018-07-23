@@ -14,4 +14,10 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit() {}
 
+  enviarDados(): void {
+    alert(`seu nome e ${this.contato.nome}`);
+    alert(`seu telefone e ${this.contato.telefone}`);
+    alert(`seu email e ${this.contato.email}`);
+  }
+
 }
