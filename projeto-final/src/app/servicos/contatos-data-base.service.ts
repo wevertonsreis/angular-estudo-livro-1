@@ -10,8 +10,12 @@ export class ContatosDataBaseService {
   constructor() { }
 
   setContato(contato: ContatoModel): void {
+    console.log('setContato ContatosDataBaseService');
+
     this.meuContatos.push(contato);
     this.enviarCotato.emit(this.meuContatos);
+
+    console.log(this.meuContatos);
   }
 
   getContato(id: number): ContatoModel {

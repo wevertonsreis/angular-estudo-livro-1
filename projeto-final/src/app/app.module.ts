@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DadosUsuarioComponent } from './dados-usuario/dados-usuario.component';
 import { DetalheUsuarioComponent } from './detalhe-usuario/detalhe-usuario.component';
 import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
+import { ContatosDataBaseService } from './servicos/contatos-data-base.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ContatosDataBaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

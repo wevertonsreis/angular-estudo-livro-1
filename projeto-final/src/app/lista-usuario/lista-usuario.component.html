@@ -1,3 +1,18 @@
-<p>
-  lista-usuario works!
-</p>
+<h3>Contatos cadastrados</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listaDeContatos, let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{item.nome}}</td>
+      <td>{{item.tipo}}</td>
+    </tr>
+  </tbody>
+</table>
